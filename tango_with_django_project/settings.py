@@ -130,3 +130,6 @@ MEDIA_URL = '/media/'
 
 #LOGIN_URL = '/rango/login/' HARDCODING do the below instead "no matter where it is"
 LOGIN_URL = 'rango:login'
+
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True/False
+#SESSION_COOKIE_AGE = 1209600 (14days)
