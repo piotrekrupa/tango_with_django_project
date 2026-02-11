@@ -1,7 +1,6 @@
 from django import forms
-from rango.models import Page, Category
+from rango.models import Page, Category, UserProfile
 from django.contrib.auth.models import User
-from rango.models import UserProfile
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=Category.NAME_MAX_LENGTH,
@@ -17,7 +16,7 @@ class CategoryForm(forms.ModelForm):
 class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=Page.TITLE_MAX_LENGTH,
                             help_text="Please enter the title of the page.")
-    url = forms.URLField(max_length=200,
+    url = forms.URLField(max_length=Page.URL_MAX_LENGTH,
                          help_text="Please enter the URL of the page.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
